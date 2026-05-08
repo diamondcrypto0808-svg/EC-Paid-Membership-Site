@@ -1,0 +1,27 @@
+{
+  "name": "premium-market",
+  "version": "1.0.0",
+  "description": "プレミアム会員限定のオンラインマーケットプレイス",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "ecommerce",
+    "marketplace",
+    "membership",
+    "subscription",
+    "japanese"
+  ],
+  "author": "Premium Market Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diamondcrypto0808-svg/EC-Paid-Membership-Site.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
