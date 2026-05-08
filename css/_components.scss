@@ -1,0 +1,367 @@
+// ボタン
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-md;
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+    border-radius: $border-radius-md;
+    transition: all $transition-fast;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover:not(:disabled) {
+        background-color: $primary-dark;
+        transform: translateY(-1px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary-color;
+    color: $white;
+
+    &:hover:not(:disabled) {
+        background-color: $secondary-dark;
+        transform: translateY(-1px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+
+    &:hover:not(:disabled) {
+        background-color: $primary-color;
+        color: $white;
+    }
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-large {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+}
+
+.btn-sm {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-sm;
+}
+
+.btn-login {
+    padding: $spacing-sm $spacing-lg;
+    color: $gray-700;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.btn-register {
+    padding: $spacing-sm $spacing-lg;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: $border-radius-md;
+    transition: all $transition-fast;
+
+    &:hover {
+        background-color: $primary-dark;
+        transform: translateY(-1px);
+    }
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    width: 100%;
+    padding: $spacing-md;
+    border: 2px solid $gray-300;
+    background-color: $white;
+    color: $gray-700;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-md;
+    transition: all $transition-fast;
+
+    &:hover {
+        border-color: $gray-400;
+        background-color: $gray-50;
+    }
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: $gray-600;
+    border-radius: $border-radius-sm;
+    transition: all $transition-fast;
+
+    &:hover {
+        background-color: $gray-100;
+        color: $primary-color;
+    }
+}
+
+// バッジ
+.badge {
+    display: inline-block;
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-full;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge--success {
+    background-color: rgba($success-color, 0.1);
+    color: darken($success-color, 10%);
+}
+
+.badge--warning {
+    background-color: rgba($warning-color, 0.1);
+    color: darken($warning-color, 15%);
+}
+
+.badge--error {
+    background-color: rgba($error-color, 0.1);
+    color: darken($error-color, 10%);
+}
+
+.badge--info {
+    background-color: rgba($info-color, 0.1);
+    color: darken($info-color, 10%);
+}
+
+// フォーム
+.form-group {
+    margin-bottom: $spacing-lg;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $gray-700;
+}
+
+.form-input {
+    width: 100%;
+    padding: $spacing-md;
+    font-size: $font-size-md;
+    color: $gray-900;
+    background-color: $white;
+    border: 2px solid $gray-300;
+    border-radius: $border-radius-md;
+    transition: all $transition-fast;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+        color: $gray-400;
+    }
+}
+
+.form-hint {
+    display: block;
+    margin-top: $spacing-xs;
+    font-size: $font-size-xs;
+    color: $gray-500;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-md;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $gray-700;
+    cursor: pointer;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+}
+
+.form-section {
+    margin-bottom: $spacing-2xl;
+}
+
+.form-section-title {
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $gray-800;
+    border-bottom: 2px solid $gray-200;
+}
+
+// セクションタイトル
+.section-title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    color: $gray-900;
+}
+
+.section-subtitle {
+    margin-bottom: $spacing-2xl;
+    font-size: $font-size-lg;
+    text-align: center;
+    color: $gray-600;
+}
+
+// ページヘッダー
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-2xl;
+    padding-bottom: $spacing-lg;
+    border-bottom: 2px solid $gray-200;
+}
+
+.page-title {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+}
+
+// データテーブル
+.data-table {
+    overflow-x: auto;
+    background-color: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background-color: $gray-50;
+        border-bottom: 2px solid $gray-200;
+
+        th {
+            padding: $spacing-md;
+            text-align: left;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-bold;
+            color: $gray-700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid $gray-200;
+            transition: background-color $transition-fast;
+
+            &:hover {
+                background-color: $gray-50;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        td {
+            padding: $spacing-md;
+            font-size: $font-size-sm;
+            color: $gray-700;
+        }
+    }
+}
+
+// ページネーション
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-2xl;
+}
+
+.pagination__btn,
+.pagination__page {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $gray-700;
+    background-color: $white;
+    border: 2px solid $gray-300;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover:not(.pagination__btn--disabled) {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+}
+
+.pagination__page--active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $white;
+
+    &:hover {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+        color: $white;
+    }
+}
+
+.pagination__btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

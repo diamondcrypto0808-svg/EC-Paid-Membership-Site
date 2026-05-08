@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出品者ダッシュボード - プレミアムマーケット</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="seller-page">
+    <!-- ヘッダー -->
+    <header class="header header--logged-in">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="seller.html">
+                        <span class="logo-text">出品者ページ</span>
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li><a href="seller.html" class="active">ダッシュボード</a></li>
+                        <li><a href="seller-products.html">商品管理</a></li>
+                        <li><a href="seller-orders.html">注文管理</a></li>
+                        <li><a href="seller-analytics.html">売上分析</a></li>
+                        <li><a href="marketplace.html">マーケットへ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="seller-main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">出品者ダッシュボード</h1>
+                <a href="seller-add-product.html" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    新規商品登録
+                </a>
+            </div>
+
+            <!-- 統計カード -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">今月の売上</p>
+                        <h3 class="stat-card__value">¥342,500</h3>
+                        <span class="stat-card__change stat-card__change--up">+18.2%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">今月の注文数</p>
+                        <h3 class="stat-card__value">47</h3>
+                        <span class="stat-card__change stat-card__change--up">+12</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">出品中の商品</p>
+                        <h3 class="stat-card__value">24</h3>
+                        <span class="stat-card__change">在庫あり</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">総閲覧数</p>
+                        <h3 class="stat-card__value">3,842</h3>
+                        <span class="stat-card__change stat-card__change--up">+24.5%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近の注文 -->
+            <div class="seller-section">
+                <div class="seller-section__header">
+                    <h2 class="seller-section__title">最近の注文</h2>
+                    <a href="seller-orders.html" class="link-primary">すべて見る</a>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>注文番号</th>
+                                <th>商品名</th>
+                                <th>購入者</th>
+                                <th>金額</th>
+                                <th>ステータス</th>
+                                <th>日時</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-2847</td>
+                                <td>プレミアムレザーバッグ</td>
+                                <td>山田太郎</td>
+                                <td>¥28,000</td>
+                                <td><span class="badge badge--success">配送済み</span></td>
+                                <td>2026/05/08 14:32</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline">詳細</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2843</td>
+                                <td>レザーウォレット</td>
+                                <td>高橋健太</td>
+                                <td>¥12,000</td>
+                                <td><span class="badge badge--warning">配送中</span></td>
+                                <td>2026/05/08 09:05</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">配送完了</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2838</td>
+                                <td>レザーキーケース</td>
+                                <td>伊藤美咲</td>
+                                <td>¥6,500</td>
+                                <td><span class="badge badge--info">処理中</span></td>
+                                <td>2026/05/07 16:20</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">発送する</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 商品パフォーマンス -->
+            <div class="seller-section">
+                <div class="seller-section__header">
+                    <h2 class="seller-section__title">人気商品</h2>
+                    <a href="seller-analytics.html" class="link-primary">詳細分析</a>
+                </div>
+                <div class="product-performance">
+                    <div class="performance-item">
+                        <div class="performance-item__image">
+                            <img src="https://via.placeholder.com/80x80/E8F4F8/4A90A4?text=商品" alt="プレミアムレザーバッグ">
+                        </div>
+                        <div class="performance-item__info">
+                            <h4 class="performance-item__name">プレミアムレザーバッグ</h4>
+                            <p class="performance-item__stats">販売数: 18 | 閲覧数: 842</p>
+                        </div>
+                        <div class="performance-item__revenue">
+                            <span class="performance-item__amount">¥504,000</span>
+                            <span class="performance-item__label">売上</span>
+                        </div>
+                    </div>
+                    <div class="performance-item">
+                        <div class="performance-item__image">
+                            <img src="https://via.placeholder.com/80x80/F5E6D3/8B7355?text=商品" alt="レザーウォレット">
+                        </div>
+                        <div class="performance-item__info">
+                            <h4 class="performance-item__name">レザーウォレット</h4>
+                            <p class="performance-item__stats">販売数: 24 | 閲覧数: 1,124</p>
+                        </div>
+                        <div class="performance-item__revenue">
+                            <span class="performance-item__amount">¥288,000</span>
+                            <span class="performance-item__label">売上</span>
+                        </div>
+                    </div>
+                    <div class="performance-item">
+                        <div class="performance-item__image">
+                            <img src="https://via.placeholder.com/80x80/E8E8F0/6B6B8B?text=商品" alt="レザーキーケース">
+                        </div>
+                        <div class="performance-item__info">
+                            <h4 class="performance-item__name">レザーキーケース</h4>
+                            <p class="performance-item__stats">販売数: 32 | 閲覧数: 956</p>
+                        </div>
+                        <div class="performance-item__revenue">
+                            <span class="performance-item__amount">¥208,000</span>
+                            <span class="performance-item__label">売上</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                <p>&copy; 2026 プレミアムマーケット. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/seller.js"></script>
+</body>
+</html>

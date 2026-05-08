@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="プレミアム会員限定のオンラインマーケットプレイス">
+    <title>プレミアムマーケット - 会員限定ECサイト</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <span class="logo-text">プレミアムマーケット</span>
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="nav-list">
+                        <li><a href="#features">サービス紹介</a></li>
+                        <li><a href="#pricing">料金プラン</a></li>
+                        <li><a href="products.html">商品一覧</a></li>
+                        <li><a href="login.html" class="btn-login">ログイン</a></li>
+                        <li><a href="register.html" class="btn-register">新規登録</a></li>
+                    </ul>
+                </nav>
+                <button class="header__menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    プレミアム会員だけの<br>
+                    特別なショッピング体験
+                </h1>
+                <p class="hero__description">
+                    厳選された商品と信頼できる出品者が集まる、<br>
+                    会員限定のオンラインマーケットプレイス
+                </p>
+                <div class="hero__actions">
+                    <a href="register.html" class="btn btn-primary btn-large">今すぐ無料で始める</a>
+                    <a href="#features" class="btn btn-secondary btn-large">詳しく見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴セクション -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">選ばれる理由</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">厳選された商品</h3>
+                    <p class="feature-card__description">
+                        審査を通過した信頼できる出品者のみが商品を掲載。安心してお買い物をお楽しみいただけます。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">安全な決済</h3>
+                    <p class="feature-card__description">
+                        クレジットカード決済に対応。セキュアな環境で安全にお支払いいただけます。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">会員限定特典</h3>
+                    <p class="feature-card__description">
+                        プレミアム会員だけの特別価格や先行販売など、お得な特典をご用意しています。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card__title">充実のサポート</h3>
+                    <p class="feature-card__description">
+                        購入から配送まで、専任スタッフが丁寧にサポート。安心してご利用いただけます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金プラン -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">料金プラン</h2>
+            <p class="section-subtitle">お客様のニーズに合わせた柔軟なプランをご用意</p>
+            <div class="pricing__grid">
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">スタンダード</h3>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">¥980</span>
+                            <span class="price-period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li>全商品へのアクセス</li>
+                        <li>月間購入制限なし</li>
+                        <li>メールサポート</li>
+                        <li>会員限定セール参加</li>
+                    </ul>
+                    <a href="register.html?plan=standard" class="btn btn-outline">このプランを選択</a>
+                </div>
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">おすすめ</div>
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">プレミアム</h3>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">¥1,980</span>
+                            <span class="price-period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li>スタンダードの全機能</li>
+                        <li>先行販売アクセス</li>
+                        <li>特別割引（最大20%OFF）</li>
+                        <li>優先サポート</li>
+                        <li>送料無料特典</li>
+                    </ul>
+                    <a href="register.html?plan=premium" class="btn btn-primary">このプランを選択</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">ビジネス</h3>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">¥4,980</span>
+                            <span class="price-period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-card__features">
+                        <li>プレミアムの全機能</li>
+                        <li>出品者機能</li>
+                        <li>販売手数料優遇</li>
+                        <li>専任アカウントマネージャー</li>
+                        <li>分析ツール利用</li>
+                    </ul>
+                    <a href="register.html?plan=business" class="btn btn-outline">このプランを選択</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 利用の流れ -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">ご利用の流れ</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step__number">1</div>
+                    <h3 class="step__title">会員登録</h3>
+                    <p class="step__description">メールアドレスで簡単に登録。プランを選択してください。</p>
+                </div>
+                <div class="step">
+                    <div class="step__number">2</div>
+                    <h3 class="step__title">お支払い設定</h3>
+                    <p class="step__description">クレジットカード情報を登録。安全に管理されます。</p>
+                </div>
+                <div class="step">
+                    <div class="step__number">3</div>
+                    <h3 class="step__title">商品を探す</h3>
+                    <p class="step__description">厳選された商品の中からお気に入りを見つけてください。</p>
+                </div>
+                <div class="step">
+                    <div class="step__number">4</div>
+                    <h3 class="step__title">購入完了</h3>
+                    <p class="step__description">簡単な手続きで購入完了。メールで通知が届きます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">今すぐプレミアム会員になって<br>特別なショッピングを始めましょう</h2>
+                <p class="cta__description">初月無料キャンペーン実施中</p>
+                <a href="register.html" class="btn btn-primary btn-large">無料で始める</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4 class="footer__title">プレミアムマーケット</h4>
+                    <p class="footer__description">
+                        会員限定の特別なショッピング体験を提供するオンラインマーケットプレイスです。
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">サービス</h4>
+                    <ul class="footer__links">
+                        <li><a href="#features">サービス紹介</a></li>
+                        <li><a href="#pricing">料金プラン</a></li>
+                        <li><a href="marketplace.html">商品一覧</a></li>
+                        <li><a href="seller.html">出品者向け</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">サポート</h4>
+                    <ul class="footer__links">
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">お問い合わせ</h4>
+                    <ul class="footer__contact">
+                        <li>support@premium-market.jp</li>
+                        <li>平日 10:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 プレミアムマーケット. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

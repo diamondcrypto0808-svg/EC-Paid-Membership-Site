@@ -1,0 +1,1989 @@
+/* プレミアムマーケット - メインスタイルシート */
+
+/* ========================================
+   変数定義
+   ======================================== */
+:root {
+    --primary-color: #4A90A4;
+    --primary-dark: #3A7080;
+    --primary-light: #6BA8BA;
+    --secondary-color: #8B7355;
+    --secondary-dark: #6B5845;
+    --secondary-light: #A38B75;
+    --accent-color: #9B8B7E;
+    --accent-light: #C4B5A8;
+    --white: #FFFFFF;
+    --gray-50: #FAFAFA;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-300: #E0E0E0;
+    --gray-400: #BDBDBD;
+    --gray-500: #9E9E9E;
+    --gray-600: #757575;
+    --gray-700: #616161;
+    --gray-800: #424242;
+    --gray-900: #212121;
+    --black: #1A1A1A;
+    --success-color: #6B8B7E;
+    --warning-color: #C4A572;
+    --error-color: #A47B7B;
+    --info-color: #7B8BA4;
+}
+
+/* ========================================
+   リセット & ベーススタイル
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--gray-900);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--gray-900);
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* ========================================
+   コンテナ
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ========================================
+   ユーティリティ
+   ======================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.required {
+    color: var(--error-color);
+    font-weight: 500;
+}
+
+.link-text {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    transition: color 0.25s ease-in-out;
+}
+
+.link-text:hover {
+    color: var(--primary-color);
+}
+
+.link-primary {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.25s ease-in-out;
+}
+
+.link-primary:hover {
+    color: var(--primary-dark);
+}
+
+/* ========================================
+   ボタン
+   ======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    border: 2px solid transparent;
+    text-decoration: none;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--secondary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn-sm {
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-login {
+    padding: 0.5rem 1.5rem;
+    color: var(--gray-700);
+    transition: color 0.15s ease-in-out;
+}
+
+.btn-login:hover {
+    color: var(--primary-color);
+}
+
+.btn-register {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-register:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--gray-300);
+    background-color: var(--white);
+    color: var(--gray-700);
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-social:hover {
+    border-color: var(--gray-400);
+    background-color: var(--gray-50);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: var(--gray-600);
+    border-radius: 4px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-icon:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+/* ========================================
+   バッジ
+   ======================================== */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge--success {
+    background-color: rgba(107, 139, 126, 0.1);
+    color: #4a6e5f;
+}
+
+.badge--warning {
+    background-color: rgba(196, 165, 114, 0.1);
+    color: #8b7348;
+}
+
+.badge--error {
+    background-color: rgba(164, 123, 123, 0.1);
+    color: #7d5a5a;
+}
+
+.badge--info {
+    background-color: rgba(123, 139, 164, 0.1);
+    color: #5a6e7d;
+}
+
+/* ========================================
+   フォーム
+   ======================================== */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--gray-900);
+    background-color: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--gray-400);
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"],
+.checkbox-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-section {
+    margin-bottom: 3rem;
+}
+
+.form-section-title {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+/* ========================================
+   セクションタイトル
+   ======================================== */
+.section-title {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--gray-900);
+}
+
+.section-subtitle {
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+    text-align: center;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   ページヘッダー
+   ======================================== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.page-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+/* ========================================
+   ヘッダー
+   ======================================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.header__logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.header__nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .header__nav {
+        display: block;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--gray-700);
+    font-weight: 500;
+    transition: color 0.15s ease-in-out;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--primary-color);
+}
+
+.header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .header__menu-toggle {
+        display: none;
+    }
+}
+
+.header__menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: var(--gray-700);
+    transition: all 0.15s ease-in-out;
+}
+
+/* ========================================
+   ユーザーメニュー
+   ======================================== */
+.nav-user {
+    position: relative;
+}
+
+.user-menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.user-menu-toggle:hover {
+    background-color: var(--gray-100);
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.15s ease-in-out;
+}
+
+.nav-user:hover .user-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-dropdown li.divider {
+    height: 1px;
+    background-color: var(--gray-200);
+    margin: 0.25rem 0;
+}
+
+.user-dropdown li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--gray-700);
+    transition: all 0.15s ease-in-out;
+}
+
+.user-dropdown li a:hover {
+    background-color: var(--gray-50);
+    color: var(--primary-color);
+}
+
+/* ========================================
+   フッター
+   ======================================== */
+.footer {
+    background-color: var(--gray-900);
+    color: var(--gray-300);
+    padding: 4rem 0 2rem;
+    margin-top: 6rem;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer__title {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer__description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--gray-400);
+}
+
+.footer__links {
+    list-style: none;
+}
+
+.footer__links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__links a {
+    color: var(--gray-400);
+    font-size: 0.875rem;
+    transition: color 0.15s ease-in-out;
+}
+
+.footer__links a:hover {
+    color: var(--white);
+}
+
+.footer__contact {
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+}
+
+.footer__contact li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-700);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* ========================================
+   ヒーローセクション
+   ======================================== */
+.hero {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgba(74, 144, 164, 0.05) 0%, rgba(139, 115, 85, 0.05) 100%);
+}
+
+.hero__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero__title {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    line-height: 1.2;
+}
+
+.hero__description {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   セクション
+   ======================================== */
+.features,
+.pricing,
+.how-it-works {
+    padding: 6rem 0;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* ========================================
+   特徴カード
+   ======================================== */
+.feature-card {
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    background-color: rgba(74, 144, 164, 0.1);
+    color: var(--primary-color);
+    border-radius: 12px;
+}
+
+.feature-card__title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.feature-card__description {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ========================================
+   CTAセクション
+   ======================================== */
+.cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+}
+
+.cta__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta__title {
+    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.cta__description {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   認証ページ
+   ======================================== */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(135deg, rgba(74, 144, 164, 0.05) 0%, rgba(139, 115, 85, 0.05) 100%);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container--wide {
+    max-width: 600px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.auth-logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.auth-logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.auth-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.auth-subtitle {
+    font-size: 1rem;
+    color: var(--gray-600);
+}
+
+.auth-form {
+    margin-top: 3rem;
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--gray-300);
+}
+
+.auth-divider span {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    background-color: var(--white);
+    color: var(--gray-500);
+    font-size: 0.875rem;
+}
+
+.auth-footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   プラン選択
+   ======================================== */
+.plan-selector {
+    display: grid;
+    gap: 1rem;
+}
+
+.plan-option {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.plan-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.plan-option input[type="radio"]:checked + .plan-option-content {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 144, 164, 0.05);
+}
+
+.plan-option-content {
+    padding: 1.5rem;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.plan-option-content:hover {
+    border-color: var(--primary-light);
+}
+
+.plan-option--featured .plan-option-content {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 144, 164, 0.05);
+}
+
+.plan-option-badge {
+    position: absolute;
+    top: -10px;
+    right: 1.5rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.plan-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.plan-option-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.plan-option-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.plan-option-desc {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.payment-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.payment-info svg {
+    color: var(--primary-color);
+}
+
+.payment-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   料金プラン
+   ======================================== */
+.pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    position: relative;
+    padding: 3rem;
+    background-color: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    transition: all 0.25s ease-in-out;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card--featured {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.pricing-card__header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.price-amount {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-period {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+}
+
+.pricing-card__features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-card__features li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--gray-700);
+}
+
+.pricing-card__features li::before {
+    content: '✓';
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--success-color);
+    font-weight: 700;
+}
+
+/* ========================================
+   ステップ
+   ======================================== */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+}
+
+.step__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.step__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.step__description {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ========================================
+   マーケットプレイス
+   ======================================== */
+.marketplace {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+.marketplace__toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .marketplace__toolbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.search-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5rem;
+    color: var(--gray-600);
+    transition: color 0.15s ease-in-out;
+}
+
+.search-btn:hover {
+    color: var(--primary-color);
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    background-color: var(--white);
+    transition: all 0.15s ease-in-out;
+}
+
+.filter-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ========================================
+   商品グリッド
+   ======================================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.product-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card__badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    z-index: 1;
+}
+
+.product-card__badge--sale {
+    background-color: var(--error-color);
+}
+
+.product-card__image {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--gray-100);
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card__favorite {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease-in-out;
+}
+
+.product-card__favorite svg {
+    display: block;
+    color: var(--gray-600);
+}
+
+.product-card__favorite:hover {
+    transform: scale(1.1);
+}
+
+.product-card__favorite:hover svg {
+    color: var(--error-color);
+    fill: var(--error-color);
+}
+
+.product-card__content {
+    padding: 1.5rem;
+}
+
+.product-card__title {
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.product-card__seller {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.product-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card__price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-original {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--gray-500);
+    text-decoration: line-through;
+}
+
+/* ========================================
+   データテーブル
+   ======================================== */
+.data-table {
+    overflow-x: auto;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background-color: var(--gray-50);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.data-table thead th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--gray-200);
+    transition: background-color 0.15s ease-in-out;
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--gray-50);
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.data-table tbody td {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+}
+
+/* ========================================
+   ページネーション
+   ======================================== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.pagination__btn,
+.pagination__page {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    background-color: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.pagination__btn:hover:not(.pagination__btn--disabled),
+.pagination__page:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination__page--active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.pagination__page--active:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.pagination__btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   管理画面レイアウト
+   ======================================== */
+.admin-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--gray-50);
+}
+
+.seller-page {
+    background-color: var(--gray-50);
+}
+
+/* ========================================
+   サイドバー
+   ======================================== */
+.admin-sidebar {
+    width: 260px;
+    background-color: var(--gray-900);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 80px;
+    }
+}
+
+.admin-sidebar__header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--gray-700);
+}
+
+.admin-sidebar__header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+@media (max-width: 1024px) {
+    .admin-sidebar__header .logo-text {
+        font-size: 1rem;
+    }
+}
+
+.admin-nav {
+    flex: 1;
+    padding: 1.5rem 0;
+}
+
+.admin-nav__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    transition: all 0.15s ease-in-out;
+}
+
+.admin-nav__item svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .admin-nav__item span {
+        display: none;
+    }
+}
+
+.admin-nav__item:hover {
+    background-color: var(--gray-800);
+    color: var(--white);
+}
+
+.admin-nav__item--active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.admin-sidebar__footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--gray-700);
+}
+
+/* ========================================
+   メインコンテンツ
+   ======================================== */
+.admin-main {
+    flex: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+    .admin-main {
+        margin-left: 80px;
+    }
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.admin-header__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.admin-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-user__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.admin-user__name {
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.admin-content {
+    flex: 1;
+    padding: 3rem;
+}
+
+/* ========================================
+   統計カード
+   ======================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease-in-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.stat-card__icon--blue {
+    background-color: rgba(123, 139, 164, 0.1);
+    color: var(--info-color);
+}
+
+.stat-card__icon--green {
+    background-color: rgba(107, 139, 126, 0.1);
+    color: var(--success-color);
+}
+
+.stat-card__icon--orange {
+    background-color: rgba(196, 165, 114, 0.1);
+    color: var(--warning-color);
+}
+
+.stat-card__icon--purple {
+    background-color: rgba(74, 144, 164, 0.1);
+    color: var(--primary-color);
+}
+
+.stat-card__content {
+    flex: 1;
+}
+
+.stat-card__label {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.stat-card__value {
+    margin-bottom: 0.25rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.stat-card__change {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stat-card__change--up {
+    color: var(--success-color);
+}
+
+.stat-card__change--up::before {
+    content: '↑ ';
+}
+
+.stat-card__change--down {
+    color: var(--error-color);
+}
+
+.stat-card__change--down::before {
+    content: '↓ ';
+}
+
+/* ========================================
+   セクション
+   ======================================== */
+.admin-section,
+.seller-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.admin-section__header,
+.seller-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.admin-section__title,
+.seller-section__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+/* ========================================
+   ユーザーリスト
+   ======================================== */
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.user-item:hover {
+    background-color: var(--gray-100);
+}
+
+.user-item__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+
+.user-item__info {
+    flex: 1;
+}
+
+.user-item__name {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.user-item__email {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.user-item__plan {
+    padding: 0.25rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+}
+
+.user-item__date {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   出品者ページ
+   ======================================== */
+.seller-main {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* ========================================
+   商品パフォーマンス
+   ======================================== */
+.product-performance {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.performance-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--gray-50);
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.performance-item:hover {
+    background-color: var(--gray-100);
+}
+
+.performance-item__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.performance-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.performance-item__info {
+    flex: 1;
+}
+
+.performance-item__name {
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.performance-item__stats {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.performance-item__revenue {
+    text-align: right;
+}
+
+.performance-item__amount {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.performance-item__label {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 1.875rem;
+    }
+
+    .hero__description {
+        font-size: 1rem;
+    }
+
+    .features__grid,
+    .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-table {
+        font-size: 0.75rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 0.5rem;
+    }
+
+    .cta__title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .features,
+    .pricing,
+    .how-it-works {
+        padding: 3rem 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .marketplace__toolbar {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .admin-content {
+        padding: 1.5rem;
+    }
+
+    .admin-header {
+        padding: 1.5rem;
+    }
+}
+
+/* ========================================
+   アニメーション
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   プリント用スタイル
+   ======================================== */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .admin-sidebar {
+        display: none;
+    }
+
+    body {
+        background-color: var(--white);
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+}
+
+/* ========================================
+   スクロールバーのカスタマイズ
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+/* ========================================
+   フォーカス表示の改善
+   ======================================== */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

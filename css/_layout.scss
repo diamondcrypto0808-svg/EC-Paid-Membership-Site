@@ -1,0 +1,333 @@
+// ヘッダー
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: $white;
+    border-bottom: 1px solid $gray-200;
+    box-shadow: $shadow-sm;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-lg 0;
+}
+
+.header__logo {
+    .logo-text {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $primary-color;
+    }
+}
+
+.header__nav {
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+        display: block;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+    list-style: none;
+
+    a {
+        color: $gray-700;
+        font-weight: $font-weight-medium;
+        transition: color $transition-fast;
+
+        &:hover, &.active {
+            color: $primary-color;
+        }
+    }
+}
+
+.header__menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+        display: none;
+    }
+
+    span {
+        width: 24px;
+        height: 2px;
+        background-color: $gray-700;
+        transition: all $transition-fast;
+    }
+}
+
+// ユーザーメニュー
+.nav-user {
+    position: relative;
+}
+
+.user-menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    transition: background-color $transition-fast;
+
+    &:hover {
+        background-color: $gray-100;
+    }
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: $primary-color;
+    color: $white;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius-full;
+}
+
+.user-name {
+    font-weight: $font-weight-medium;
+    color: $gray-700;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: $spacing-sm;
+    min-width: 200px;
+    background-color: $white;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-lg;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all $transition-fast;
+
+    .nav-user:hover & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    li {
+        &.divider {
+            height: 1px;
+            background-color: $gray-200;
+            margin: $spacing-xs 0;
+        }
+
+        a {
+            display: block;
+            padding: $spacing-md $spacing-lg;
+            color: $gray-700;
+            transition: all $transition-fast;
+
+            &:hover {
+                background-color: $gray-50;
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// フッター
+.footer {
+    background-color: $gray-900;
+    color: $gray-300;
+    padding: $spacing-3xl 0 $spacing-xl;
+    margin-top: $spacing-4xl;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-2xl;
+    margin-bottom: $spacing-2xl;
+}
+
+.footer__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $white;
+}
+
+.footer__description {
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    color: $gray-400;
+}
+
+.footer__links {
+    list-style: none;
+
+    li {
+        margin-bottom: $spacing-sm;
+    }
+
+    a {
+        color: $gray-400;
+        font-size: $font-size-sm;
+        transition: color $transition-fast;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.footer__contact {
+    list-style: none;
+    font-size: $font-size-sm;
+    color: $gray-400;
+
+    li {
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.footer__bottom {
+    padding-top: $spacing-xl;
+    border-top: 1px solid $gray-700;
+    text-align: center;
+    font-size: $font-size-sm;
+    color: $gray-500;
+}
+
+// ヒーローセクション
+.hero {
+    padding: $spacing-4xl 0;
+    background: linear-gradient(135deg, rgba($primary-color, 0.05) 0%, rgba($secondary-color, 0.05) 100%);
+}
+
+.hero__content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero__title {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+    line-height: 1.2;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-4xl;
+    }
+}
+
+.hero__description {
+    margin-bottom: $spacing-2xl;
+    font-size: $font-size-xl;
+    color: $gray-600;
+    line-height: 1.6;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-lg;
+    }
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+}
+
+// セクション
+.features,
+.pricing,
+.how-it-works {
+    padding: $spacing-4xl 0;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-2xl;
+    margin-top: $spacing-2xl;
+}
+
+// 特徴カード
+.feature-card {
+    padding: $spacing-2xl;
+    background-color: $white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-xl;
+    }
+}
+
+.feature-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: $spacing-lg;
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    border-radius: $border-radius-lg;
+}
+
+.feature-card__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+}
+
+.feature-card__description {
+    font-size: $font-size-md;
+    color: $gray-600;
+    line-height: 1.6;
+}
+
+// CTAセクション
+.cta {
+    padding: $spacing-4xl 0;
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+    color: $white;
+}
+
+.cta__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta__title {
+    margin-bottom: $spacing-lg;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $white;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+    }
+}
+
+.cta__description {
+    margin-bottom: $spacing-2xl;
+    font-size: $font-size-xl;
+    color: rgba($white, 0.9);
+}

@@ -1,0 +1,109 @@
+// メインスタイルシート
+@import 'variables';
+@import 'base';
+@import 'components';
+@import 'layout';
+@import 'pages';
+@import 'admin';
+
+// レスポンシブ対応
+@media (max-width: $breakpoint-md) {
+    .hero__title {
+        font-size: $font-size-3xl;
+    }
+
+    .hero__description {
+        font-size: $font-size-md;
+    }
+
+    .features__grid,
+    .pricing__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-table {
+        font-size: $font-size-xs;
+
+        th, td {
+            padding: $spacing-sm;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .container {
+        padding: 0 $spacing-md;
+    }
+
+    .hero {
+        padding: $spacing-2xl 0;
+    }
+
+    .features,
+    .pricing,
+    .how-it-works {
+        padding: $spacing-2xl 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-container {
+        padding: $spacing-lg;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .marketplace__toolbar {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+}
+
+// アニメーション
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+// プリント用スタイル
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .admin-sidebar {
+        display: none;
+    }
+
+    body {
+        background-color: $white;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+}

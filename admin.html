@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者ダッシュボード - プレミアムマーケット</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+    <!-- サイドバー -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar__header">
+            <span class="logo-text">管理画面</span>
+        </div>
+        <nav class="admin-nav">
+            <a href="admin.html" class="admin-nav__item admin-nav__item--active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                <span>ダッシュボード</span>
+            </a>
+            <a href="admin-products.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span>商品管理</span>
+            </a>
+            <a href="admin-orders.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                </svg>
+                <span>注文管理</span>
+            </a>
+            <a href="admin-users.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+                <span>会員管理</span>
+            </a>
+            <a href="admin-sellers.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 7h-9M14 17H5M14 3v18M14 17l6-6M14 17l-6-6"/>
+                </svg>
+                <span>出品者管理</span>
+            </a>
+            <a href="admin-analytics.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                <span>分析レポート</span>
+            </a>
+            <a href="admin-settings.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"/>
+                </svg>
+                <span>設定</span>
+            </a>
+        </nav>
+        <div class="admin-sidebar__footer">
+            <a href="marketplace.html" class="admin-nav__item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                </svg>
+                <span>サイトに戻る</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1 class="admin-header__title">ダッシュボード</h1>
+            <div class="admin-header__actions">
+                <button class="btn btn-sm btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                    </svg>
+                    レポート出力
+                </button>
+                <div class="admin-user">
+                    <span class="admin-user__avatar">管</span>
+                    <span class="admin-user__name">管理者</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- 統計カード -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">総会員数</p>
+                        <h3 class="stat-card__value">2,847</h3>
+                        <span class="stat-card__change stat-card__change--up">+12.5%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">今月の売上</p>
+                        <h3 class="stat-card__value">¥8,542,000</h3>
+                        <span class="stat-card__change stat-card__change--up">+8.2%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">今月の注文数</p>
+                        <h3 class="stat-card__value">1,284</h3>
+                        <span class="stat-card__change stat-card__change--up">+15.3%</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card__icon stat-card__icon--purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card__content">
+                        <p class="stat-card__label">登録商品数</p>
+                        <h3 class="stat-card__value">3,456</h3>
+                        <span class="stat-card__change stat-card__change--up">+24</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近の注文 -->
+            <div class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">最近の注文</h2>
+                    <a href="admin-orders.html" class="link-primary">すべて見る</a>
+                </div>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>注文番号</th>
+                                <th>購入者</th>
+                                <th>商品</th>
+                                <th>金額</th>
+                                <th>ステータス</th>
+                                <th>日時</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-2847</td>
+                                <td>山田太郎</td>
+                                <td>プレミアムレザーバッグ</td>
+                                <td>¥28,000</td>
+                                <td><span class="badge badge--success">配送済み</span></td>
+                                <td>2026/05/08 14:32</td>
+                                <td>
+                                    <button class="btn-icon" title="詳細">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2846</td>
+                                <td>佐藤花子</td>
+                                <td>オーガニックスキンケアセット</td>
+                                <td>¥9,600</td>
+                                <td><span class="badge badge--warning">配送中</span></td>
+                                <td>2026/05/08 13:15</td>
+                                <td>
+                                    <button class="btn-icon" title="詳細">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2845</td>
+                                <td>鈴木一郎</td>
+                                <td>ワイヤレスイヤホン Pro</td>
+                                <td>¥15,800</td>
+                                <td><span class="badge badge--info">処理中</span></td>
+                                <td>2026/05/08 11:48</td>
+                                <td>
+                                    <button class="btn-icon" title="詳細">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2844</td>
+                                <td>田中美咲</td>
+                                <td>アロマディフューザー</td>
+                                <td>¥8,500</td>
+                                <td><span class="badge badge--success">配送済み</span></td>
+                                <td>2026/05/08 10:22</td>
+                                <td>
+                                    <button class="btn-icon" title="詳細">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2843</td>
+                                <td>高橋健太</td>
+                                <td>ヨガマット プレミアム</td>
+                                <td>¥6,800</td>
+                                <td><span class="badge badge--warning">配送中</span></td>
+                                <td>2026/05/08 09:05</td>
+                                <td>
+                                    <button class="btn-icon" title="詳細">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 新規会員登録 -->
+            <div class="admin-section">
+                <div class="admin-section__header">
+                    <h2 class="admin-section__title">新規会員登録</h2>
+                    <a href="admin-users.html" class="link-primary">すべて見る</a>
+                </div>
+                <div class="user-list">
+                    <div class="user-item">
+                        <div class="user-item__avatar">中</div>
+                        <div class="user-item__info">
+                            <h4 class="user-item__name">中村優子</h4>
+                            <p class="user-item__email">nakamura@example.com</p>
+                        </div>
+                        <span class="user-item__plan">プレミアム</span>
+                        <span class="user-item__date">2026/05/08</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-item__avatar">小</div>
+                        <div class="user-item__info">
+                            <h4 class="user-item__name">小林大輔</h4>
+                            <p class="user-item__email">kobayashi@example.com</p>
+                        </div>
+                        <span class="user-item__plan">スタンダード</span>
+                        <span class="user-item__date">2026/05/07</span>
+                    </div>
+                    <div class="user-item">
+                        <div class="user-item__avatar">加</div>
+                        <div class="user-item__info">
+                            <h4 class="user-item__name">加藤真理子</h4>
+                            <p class="user-item__email">kato@example.com</p>
+                        </div>
+                        <span class="user-item__plan">ビジネス</span>
+                        <span class="user-item__date">2026/05/07</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
